@@ -2,12 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background-primary: #151A20;
+  --text-primary: #FFF;
+}
+
+@layer base {
+  .container {
+    @apply px-4
+  }
+}
+
+.text-shadow {
+  text-shadow: 1px 0 4px rgba(0, 0, 0, 0.678);
+}
+
+.grid-col-span{
+  grid-column: 1 / 2;
+}
+
+@media screen and (min-width: 768px) {
+  .grid-col-span{
+    grid-column: 1 / 3;
+  }
+}
+
+.swiper .swiper-slide:not(.swiper-slide-visible.swiper-slide-active) {
+  opacity: 0 !important;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: var(--background-primary);
+  color: var(--text-primary)
 }
 
 a {
